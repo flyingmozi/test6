@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
     <div class="wrapper">
 
@@ -16,23 +19,77 @@
             <li>已过期</li>
         </header>
 
-        <section class="main"></section>
+        <section class="main">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <dl>
+                            <img src="http://p.ssl.qhimg.com/t018ccca46939d3c0bf.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://img4.imgtn.bdimg.com/it/u=3327416916,257169400&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://b-ssl.duitang.com/uploads/blog/201403/04/20140304111500_FFkWB.jpeg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://txt22262.book118.com/2017/0422/book101484/101483983.jpg" alt="">
+                        </dl>
+                    </div>
+                    <div class="swiper-slide">
+                        <dl>
+                            <img src="http://img4.imgtn.bdimg.com/it/u=4103975128,1667207632&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://img0.imgtn.bdimg.com/it/u=1814094092,648896434&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://img3.imgtn.bdimg.com/it/u=4047301156,520412373&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://txt22262.book118.com/2017/0422/book101484/101483983.jpg" alt="">
+                        </dl>
+                    </div>
+                    <div class="swiper-slide">
+                        <dl>
+                            <img src="http://img1.imgtn.bdimg.com/it/u=3621120145,2402931784&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://img2.imgtn.bdimg.com/it/u=2817479901,3291296931&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://img5.imgtn.bdimg.com/it/u=3817824897,1768495848&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                        <dl>
+                            <img src="http://img0.imgtn.bdimg.com/it/u=823304286,67103256&fm=26&gp=0.jpg" alt="">
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
 
 
     <script src="./js/flexible.js"></script>
+    <script src="./js/swiper.min.js"></script>
     <script>
         var lis = [...document.querySelectorAll('.header li')];
 
-        lis.forEach(item=>{
+        lis.forEach((item, index) => {
             item.onclick = () => {
-                lis.forEach(los=>{
+                lis.forEach(los => {
                     los.classList.remove('active')
                 })
                 item.classList.add('active')
+                swiper.slideTo(index)
             }
+        })
+
+        let swiper = new Swiper('.swiper-container',{
+
         })
     </script>
 </body>
+
 </html>
